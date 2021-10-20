@@ -284,6 +284,31 @@
           }
         }
       }
+    },
+    "shared-heroes": {
+      "projectType": "library",
+      "root": "libs/shared-heroes",
+      "sourceRoot": "libs/shared-heroes/src",
+      "prefix": "nx-heroes",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared-heroes"],
+          "options": {
+            "jestConfig": "libs/shared-heroes/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared-heroes/src/**/*.ts",
+              "libs/shared-heroes/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

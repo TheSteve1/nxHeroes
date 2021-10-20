@@ -47,6 +47,9 @@
     },
     "shared": {
       "tags": []
+    },
+    "shared-heroes": {
+      "tags": []
     }
   }
 }

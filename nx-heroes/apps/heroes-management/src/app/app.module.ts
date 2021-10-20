@@ -11,9 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from '@nx-heroes/heroes/heroes.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { MessagesComponent } from './messages/messages.component';
+import { HeroesComponent, MessagesComponent  } from '@nx-heroes/shared_heroes';
 
 @NgModule({
   imports: [
@@ -31,11 +29,9 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
   ],
   bootstrap: [ AppComponent ]
 })

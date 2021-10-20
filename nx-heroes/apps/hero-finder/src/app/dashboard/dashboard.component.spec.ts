@@ -3,8 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
 import { HeroSearchComponent } from '../../../../hero-finder/src/app/hero-search/hero-search.component';
-import { HeroService } from '../../../../heroes-management/src/app/hero.service';
-import { HEROES } from '../../../../heroes-management/src/app/mock-heroes';
+import { HeroService, HEROES } from '@nx-heroes/shared_heroes';
 
 import { DashboardComponent } from './dashboard.component';
 
