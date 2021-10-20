@@ -24,10 +24,12 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    var x = this.route.snapshot.paramMap.get('id');
+    const x = this.route.snapshot.paramMap.get('id');
+    if(x != null){
     const id = parseInt(x, 10);
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+    }
   }
 
   goBack(): void {
