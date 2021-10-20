@@ -10,9 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent, MessagesComponent  } from '@nx-heroes/shared_heroes';
-
+import { MessagesComponent , HeroDetailComponent } from '@nx-heroes/shared_heroes';
+import {HeroesComponent} from  './heroes/heroes.component'
 @NgModule({
   imports: [
     BrowserModule,
