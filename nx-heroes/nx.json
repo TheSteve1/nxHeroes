@@ -35,12 +35,18 @@
       "tags": [],
       "implicitDependencies": ["hero-finder"]
     },
+    "heroes": {
+      "tags": []
+    },
     "heroes-management": {
       "tags": []
     },
     "heroes-management-e2e": {
       "tags": [],
       "implicitDependencies": ["heroes-management"]
+    },
+    "shared": {
+      "tags": []
     }
   }
 }

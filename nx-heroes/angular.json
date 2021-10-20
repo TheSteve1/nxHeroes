@@ -120,6 +120,31 @@
         }
       }
     },
+    "heroes": {
+      "projectType": "library",
+      "root": "libs/heroes",
+      "sourceRoot": "libs/heroes/src",
+      "prefix": "nx-heroes",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/heroes"],
+          "options": {
+            "jestConfig": "libs/heroes/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/heroes/src/**/*.ts",
+              "libs/heroes/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "heroes-management": {
       "projectType": "application",
       "root": "apps/heroes-management",
@@ -234,6 +259,28 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["apps/heroes-management-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared"],
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
