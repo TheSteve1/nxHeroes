@@ -14,13 +14,8 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
-        "accessToken": "ZDA1OTAzYjItYWVkZC00ZWEzLWE0N2YtNWNkZTFmMjBiY2NjfHJlYWQtd3JpdGU="
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "YWRlYTJjZjctNDM5NC00MDI1LTgxYmYtNWVlZDcwZGI1NzgwfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -32,5 +27,20 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "hero-finder": {
+      "tags": []
+    },
+    "hero-finder-e2e": {
+      "tags": [],
+      "implicitDependencies": ["hero-finder"]
+    },
+    "heroes-management": {
+      "tags": []
+    },
+    "heroes-management-e2e": {
+      "tags": [],
+      "implicitDependencies": ["heroes-management"]
+    }
+  }
 }
