@@ -6,6 +6,8 @@ defaults:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      NX_BRANCH: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
