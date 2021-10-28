@@ -15,8 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-heroes/heroes": ["libs/heroes/src/index.ts"],
-      "@nx-heroes/shared": ["libs/shared/src/index.ts"],
       "@nx-heroes/shared_heroes": ["libs/shared-heroes/src/index.ts"]
     }
   },
