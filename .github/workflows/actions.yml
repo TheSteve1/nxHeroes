@@ -1,5 +1,8 @@
 name: Nx Standard Use Case
 on: push
+defaults:
+  run:
+    working-directory: ./nx-heroes
 jobs:
   ci:
     runs-on: ubuntu-latest
