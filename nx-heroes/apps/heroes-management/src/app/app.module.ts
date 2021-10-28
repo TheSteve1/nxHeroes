@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { MessagesComponent , HeroDetailComponent } from '@nx-heroes/shared_heroes';
+import { MessagesComponent } from '@nx-heroes/shared_heroes';
 import {HeroesComponent} from  './heroes/heroes.component'
 @NgModule({
   imports: [
@@ -29,7 +29,6 @@ import {HeroesComponent} from  './heroes/heroes.component'
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent,
     MessagesComponent,
   ],
   bootstrap: [ AppComponent ]

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero,  HeroService } from '@nx-heroes/shared_heroes';
+import {Hero } from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'nx-heroes-app-hero-detail',
@@ -10,7 +11,7 @@ import { Hero,  HeroService } from '@nx-heroes/shared_heroes';
   styleUrls: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | undefined;
+  hero!: Hero;
 
   constructor(
     private route: ActivatedRoute,
