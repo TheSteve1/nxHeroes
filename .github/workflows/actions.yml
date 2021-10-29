@@ -1,58 +1,19 @@
-name: CI
-on: [push, pull_request]
+name: Nx Standard Use Case
+on: push
 defaults:
   run:
     working-directory: ./nx-heroes
-env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-
 jobs:
-  main:
+  ci:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
+    env:
+      NX_BRANCH: ${{ github.event.pull_request.number}}
     steps:
       - uses: actions/checkout@v2
-        name: Checkout [main]
+      - uses: actions/setup-node@v2
         with:
-          fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1 
-        with: 
-          node-version: '14'
-      - run: npm install
-      - run: npx nx-cloud start-ci-run    
-      - run: npx nx affected --target=build --parallel --max-parallel=3
-      - run: npx nx-cloud stop-all-agents
-  pr:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
-        with: 
           node-version: '14'
       - run: npm install
       - run: npx nx-cloud start-ci-run
-      - run: npx nx affected --target=build --parallel --max-parallel=3
+      - run: npx nx run-many --target=build --all --prod
       - run: npx nx-cloud stop-all-agents
-  agents:
-    runs-on: ubuntu-latest
-    name: Agent 1
-    timeout-minutes: 60
-    strategy:
-      matrix:
-        agent: [ 1, 2, 3 ]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with: 
-          node-version: '14'
-      - run: npm install
-      - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
