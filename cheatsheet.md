@@ -29,4 +29,19 @@ startet Build, Serve, Test, Lint und E2E für mehrere Projekte
 nur betroffene Projekte werden ausgeführt
 ### migrate
 updated den workspace und packages
-## Nx Cloud 
+## Nx Cloud
+Kostenlos
+GitHub Integration
+Detailliertes Logging für CI
+Zeitersparnis
+erleichtert Teamarbeit
+### Organisationsverwaltung
+Members hinzufügen/ löschen/ Rechte verwalten
+Acess: Public: jeder mit einem Link
+       Private: nur Member 
+### Zeitersparnis 
+NxCloud cashed Runs, und verwendet Teile wieder wenn diese identisch sind.
+### Github Integration  
+Github Actions triggern runs, deren Ergebnisse, auch von der NxCloud angezeigt und optimiert werden.
+### Run
+In den Run Details wird der Status, die benötigte Zeit, das ausgeführte Command, Maschineninformationen, und welche Tasks ausgeführt und aus dem cash entnommen wurden angezeigt.
